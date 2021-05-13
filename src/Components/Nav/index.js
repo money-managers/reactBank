@@ -5,7 +5,7 @@ function Nav(props){
     return(
         <header className="">
    <h1 className=" name ">
-      Bank of Reac
+      Bank of React
   </h1>  
 
   <nav className=" " id="=">

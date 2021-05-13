@@ -3,8 +3,26 @@ import React from 'react';
 function SignUp(){
     return(
         <div id="signup">
-            signup test
-        </div>
+  <section >
+          <h1>Sign up</h1>
+          <form >
+          <div>
+              <label id="name">Email address:</label>
+              <input   />
+            </div>
+            <div>
+              <label id="email">Email address:</label>
+              <input type="email"  />
+            </div>
+            <div>
+              <label id="password">password:</label>
+              <input   />
+            </div>
+  
+            <button className ="button" type="submit"> <span>Submit</span></button>
+          </form>
+        </section>     
+           </div>
     )
 }
 
