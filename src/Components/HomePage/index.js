@@ -4,7 +4,7 @@ function HomePage(){
 
 
     return (
-        <div class="wrapper">
+        <div  id="home" class="wrapper">
         <div class="total">
           <div class="total">Your total is: $<span id="total">0</span></div>
         </div>
