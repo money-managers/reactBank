@@ -1,5 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const depositSchema = require('./Deposit');
+const expenseSchema = require('./Expense');
 
 const userSchema = new Schema(
     {
@@ -18,8 +20,8 @@ const userSchema = new Schema(
         type: String,
         required: true,
       },
-      deposits: [deposits],
-      expenses: [expenses]
+      // deposits: [depositSchema],
+      // expenses: [expenseSchema]
     },
     // set this to use virtual below
     {

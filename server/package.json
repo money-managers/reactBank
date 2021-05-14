@@ -1,0 +1,30 @@
+{
+  "name": "reactbank",
+  "version": "1.0.0",
+  "description": "samuels commit",
+  "main": "index.js",
+  "dependencies": {
+    "apollo-server-express": "^2.24.0",
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1",
+    "graphql": "^15.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.9",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/money-managers/reactBank.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/money-managers/reactBank/issues"
+  },
+  "homepage": "https://github.com/money-managers/reactBank#readme"
+}
