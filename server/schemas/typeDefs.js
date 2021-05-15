@@ -24,6 +24,7 @@ type Deposit {
 
 type Query {
     me: User
+    users: [User]
 }
 
 type Auth {
@@ -34,6 +35,8 @@ type Auth {
 type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    addDeposit(name: String!, amount: Int!): User
+    addExpense(name: String!, amount: Int!): User
     removeDeposit(depId: ID): User
     removeExpense(expId: ID): User
 }

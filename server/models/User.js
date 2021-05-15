@@ -20,8 +20,8 @@ const userSchema = new Schema(
         type: String,
         required: true,
       },
-      // deposits: [depositSchema],
-      // expenses: [expenseSchema]
+      deposits: [depositSchema],
+      expenses: [expenseSchema]
     },
     // set this to use virtual below
     {

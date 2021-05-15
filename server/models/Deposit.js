@@ -12,7 +12,7 @@ const depositSchema = new Schema(
     value: {
       type: Number,
       min: 0,
-      required: "Deposit amount:"
+      required: "Please enter an amount for this deposit"
     },
     date: {
       type: Date,
@@ -21,6 +21,4 @@ const depositSchema = new Schema(
   }
 );
 
-const Deposit = mongoose.model("Deposit", depositSchema);
-
-module.exports = Deposit;
+module.exports = depositSchema;
