@@ -1,7 +1,10 @@
+*{
+
+}
 body {
   font-size: 120%;
-  font-family: Arial;
-}
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+  font-family: 'ZCOOL XiaoWei', serif;}
 
 button, input {
   font-size: 100%;

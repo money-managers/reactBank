@@ -7,7 +7,7 @@ function SignUp(){
           <h1>Sign up</h1>
           <form >
           <div>
-              <label id="name">Email address:</label>
+              <label id="name">Name:</label>
               <input   />
             </div>
             <div>
