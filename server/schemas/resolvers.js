@@ -12,6 +12,16 @@ const resolvers = {
                 return userData;
             }
             throw new AuthenticationError('You must be logged in')
+        },
+        users: async (parent, args, context) => {
+            if(context.user) {
+                const user = await User.findById(context.user._id).populate({
+                    populate: 'deposits',
+                    populate: 'expenses'
+                });
+                return user;
+            }
+            throw new AuthenticationError('Not logged in');
         }
     },
 
