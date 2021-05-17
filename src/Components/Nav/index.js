@@ -1,5 +1,4 @@
 import React from 'react';
-
 function Nav(props){
     const {setPageSelected} = props
     return(
@@ -23,10 +22,10 @@ function Nav(props){
       Log In
     </a>
 
-    <span  className=" bottommm navbar-nav mr-auto contact col-sm">
+    <a  href="#login"  onClick={() => setPageSelected("login")} className=" bottommm navbar-nav mr-auto contact col-sm">
               Log Out
 
-    </span>
+    </a>
   </div>
 </div>
   </nav>

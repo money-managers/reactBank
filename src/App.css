@@ -1,10 +1,33 @@
 *{
+  --main:#4a4a4a;
+  --secondary:#276791;
+  --third:#a5becf;
+  --background:#36353b;
 
 }
+html{
+  
+}
+header {
+background-color: var(--main);
+color:var(--third);
+text-decoration:none;
+
+}
+
+
+a{
+  text-decoration:none;
+  color: var(--third);
+}
+
 body {
+  color:var(--third);
   font-size: 120%;
   font-family: 'ZCOOL QingKe HuangYou', cursive;
-  font-family: 'ZCOOL XiaoWei', serif;}
+  font-family: 'ZCOOL XiaoWei', serif;
+  background-image: url(../src/reactBank.jpg);
+}
 
 button, input {
   font-size: 100%;
