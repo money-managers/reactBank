@@ -4,6 +4,9 @@ import HomePage from './Components/HomePage';
 import Nav from './Components/Nav';
 import Login from './Components/Login';
 import Signup from './Components/SignUp'
+import SideNav from './Components/SideNav';
+
+
 
 function App() {
   const [categories] = useState([
@@ -21,13 +24,18 @@ function App() {
   
   return (
     <div className="App">
-        <Nav
-          categories={categories}
-          setCurrentCategory={setCurrentCategory}
-          currentCategory={currentCategory}
-          pageSelected={pageSelected}
-          setPageSelected={setPageSelected}
-        ></Nav>
+      <header>
+
+        <Nav></Nav> 
+<SideNav id="sideNav"
+     categories={categories}
+     setCurrentCategory={setCurrentCategory}
+     currentCategory={currentCategory}
+     pageSelected={pageSelected}
+     setPageSelected={setPageSelected}
+ ></SideNav>
+        </header>
+    
  {pageSelected === "home" ? (
       <HomePage></HomePage>
   ) : (<></>    )
