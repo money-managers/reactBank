@@ -26,7 +26,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "cd server && npm start",
-    "start:dev": "concurrently \"cd server && npm start\" \"react-scripts start\"",
+    "start:dev": "concurrently \"cd server && npm start\" \"cd client && react-scripts start\"",
     "seed": "cd server && npm run seed"
   },
   "repository": {
