@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.68aa61ed.chunk.css",
+    "main.js": "/static/js/main.b7cc84c8.chunk.js",
+    "main.js.map": "/static/js/main.b7cc84c8.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ffe660df.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ffe660df.js.map",
+    "static/js/2.98c1bd65.chunk.js": "/static/js/2.98c1bd65.chunk.js",
+    "static/js/2.98c1bd65.chunk.js.map": "/static/js/2.98c1bd65.chunk.js.map",
+    "static/js/3.f107cbe2.chunk.js": "/static/js/3.f107cbe2.chunk.js",
+    "static/js/3.f107cbe2.chunk.js.map": "/static/js/3.f107cbe2.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.68aa61ed.chunk.css.map": "/static/css/main.68aa61ed.chunk.css.map",
+    "static/js/2.98c1bd65.chunk.js.LICENSE.txt": "/static/js/2.98c1bd65.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/reactBank.04e64e22.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ffe660df.js",
+    "static/js/2.98c1bd65.chunk.js",
+    "static/css/main.68aa61ed.chunk.css",
+    "static/js/main.b7cc84c8.chunk.js"
+  ]
+}
