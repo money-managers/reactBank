@@ -1,5 +1,6 @@
 const  { User, Deposit, Expense } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
+const Transaction = require('../models/transaction');
 
 const resolvers = {
     Query: {
@@ -49,6 +50,10 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
+        addTransaction: async (parent, args) => {
+            const transaction = await Transaction.create(args);
+            return transaction;
+        }
     }
 }
 

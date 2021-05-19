@@ -13,6 +13,12 @@ type Expense {
     amount: Int
 }
 
+type Transaction{
+    transId: ID
+    name: String
+    amount: Int
+}
+
 type Deposit {
     depId: ID
     name: String
@@ -32,10 +38,7 @@ type Auth {
 type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addDeposit(name: String!, amount: Int!): User
-    addExpense(name: String!, amount: Int!): User
-    removeDeposit(depId: ID): User
-    removeExpense(expId: ID): User
+    addTransaction(name: String!, amount: Int!): User
 }
 `;
 
