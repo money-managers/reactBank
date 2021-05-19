@@ -1,17 +1,33 @@
 {
-<<<<<<< HEAD
   "name": "reactbank",
   "version": "1.0.0",
   "description": "samuels commit",
+  "proxy": "http://localhost:3001",
   "main": "index.js",
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^12.8.3",
     "apollo-server-express": "^2.24.0",
     "express": "^4.17.1",
-    "path": "^0.12.7"
+    "if-env": "^1.0.4",
+    "path": "^0.12.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "react-scripts": "^4.0.3",
+    "web-vitals": "^1.1.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "concurrently": "^6.1.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "cd server && npm start",
+    "start:dev": "concurrently \"cd server && npm start\" \"react-scripts start\"",
+    "seed": "cd server && npm run seed"
   },
   "repository": {
     "type": "git",
@@ -22,34 +38,7 @@
   "bugs": {
     "url": "https://github.com/money-managers/reactBank/issues"
   },
-  "homepage": "https://github.com/money-managers/reactBank#readme"
-=======
-  "name": "my-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@react-icons/all-files": "^4.1.0",
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.6",
-    "@testing-library/user-event": "^12.8.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-icons": "^4.2.0",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
+  "homepage": "https://github.com/money-managers/reactBank",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -62,5 +51,4 @@
       "last 1 safari version"
     ]
   }
->>>>>>> 1b4a06871dbce26cd57f6d0849242c7b4c726747
 }
