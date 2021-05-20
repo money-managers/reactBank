@@ -1,6 +1,6 @@
 import React from 'react';
 import Chart from "chart.js"
-import { populateTable,populateTotal,sendTransaction} from '../../logic' 
+import { populateTable,populateTotal,sendTransaction} from '../../js/logic' 
 function HomePage(){
   
   fetch("/api/transaction")

@@ -1,22 +1,21 @@
-// const { authMiddleware } = require("../../server/utils/auth");
+import { saveRecord } from './idb';
 
-// const saveRecord = require('../public/js/idb.js');
 let transactions = [];
-// let myChart;
+let myChart;
 
 
-// fetch("/api/transaction")
-//   .then(response => {
-//     return response.json();
-//   })
-//   .then(data => {
-//     // save db data on global variable
-//     transactions = data;
+fetch("/api/transaction")
+  .then(response => {
+    return response.json();
+  })
+  .then(data => {
+    // save db data on global variable
+    transactions = data;
 
-//     populateTotal();
-//     populateTable();
-//     populateChart();
-//   });
+    populateTotal();
+    populateTable();
+    populateChart();
+  });
 
 export function populateTotal() {
   // reduce transaction amounts to a single total value
@@ -44,44 +43,44 @@ export function populateTable() {
   });
 }
 
-// export function populateChart() {
-//   // copy array and reverse it
-//   let reversed = transactions.slice().reverse();
-//   let sum = 0;
+export function populateChart() {
+  // copy array and reverse it
+  let reversed = transactions.slice().reverse();
+  let sum = 0;
 
-//   // create date labels for chart
-//   let labels = reversed.map(t => {
-//     let date = new Date(t.date);
-//     return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
-//   });
+  // create date labels for chart
+  let labels = reversed.map(t => {
+    let date = new Date(t.date);
+    return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+  });
 
-//   // create incremental values for chart
-//   let data = reversed.map(t => {
-//     sum += parseInt(t.value);
-//     return sum;
-//   });
+  // create incremental values for chart
+  let data = reversed.map(t => {
+    sum += parseInt(t.value);
+    return sum;
+  });
 
-//   // remove old chart if it exists
-//   if (myChart) {
-//     myChart.destroy();
-//   }
+  // remove old chart if it exists
+  if (myChart) {
+    myChart.destroy();
+  }
 
-//   let ctx = document.getElementById("myChart").getContext("2d");
+  let ctx = document.getElementById("myChart").getContext("2d");
 
-//   myChart = new Chart(ctx, {
-//     type: 'line',
-//       data: {
-//         labels,
-//         datasets: [{
-//             label: "Total Over Time",
-//             fill: true,
-//             backgroundColor: "#6666ff",
-//             data
-//         }]
-//     }
-//   });
+  myChart = new Chart(ctx, {
+    type: 'line',
+      data: {
+        labels,
+        datasets: [{
+            label: "Total Over Time",
+            fill: true,
+            backgroundColor: "#6666ff",
+            data
+        }]
+    }
+  });
   
-// }
+}
 
 export function  sendTransaction(isAdding) {
   let nameEl = document.querySelector("#t-name");
@@ -113,7 +112,7 @@ export function  sendTransaction(isAdding) {
   transactions.unshift(transaction);
 
   // re-run logic to populate ui with new record
-  // populateChart();
+  populateChart();
   populateTable();
   populateTotal();
   
@@ -141,7 +140,7 @@ export function  sendTransaction(isAdding) {
   })
   .catch(err => {
     // fetch failed, so save in indexed db
-    // saveRecord(transaction);
+    saveRecord(transaction);
 
     // clear form
     nameEl.value = "";
