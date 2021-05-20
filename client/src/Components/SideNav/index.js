@@ -24,7 +24,7 @@ function SideNav(props){
             </a>
             {Auth.loggedIn() ? (
             <>
-            <a  href="#login"  onClick={() => setPageSelected("login")} >
+            <a  href="#login"  onClick={Auth.logout} >
                 Log Out
             </a>
               </>
@@ -33,7 +33,7 @@ function SideNav(props){
             <a href="#signup"  onClick={() => setPageSelected("signup")} >
                 Signup
             </a>
-            <a href="#login"  onClick={() => setPageSelected("home")} >
+            <a href="#login"  onClick={() => setPageSelected("login")} >
               Log In
             </a>
             </>
