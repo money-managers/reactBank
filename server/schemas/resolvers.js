@@ -1,6 +1,7 @@
 const  { User, Deposit, Expense } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const Transaction = require('../models/transaction');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
@@ -8,7 +9,7 @@ const resolvers = {
             if(context.user){
                 const userData = await User.findOne({})
                     .select('-__v -password')
-                    .populate('expenses deposits')
+                    .populate('transactions')
 
                 return userData;
             }
@@ -17,8 +18,7 @@ const resolvers = {
         users: async (parent, args, context) => {
             if(context.user) {
                 const user = await User.findById(context.user._id).populate({
-                    populate: 'deposits',
-                    populate: 'expenses'
+                    populate: 'transactions'
                 });
                 return user;
             }
