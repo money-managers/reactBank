@@ -1,4 +1,5 @@
 import React from 'react';
+import Auth from '../../utils/auth';
 
 function SideNav(props){
 
@@ -15,24 +16,28 @@ function SideNav(props){
       
     return (
         <div id="sideNav">
-       <div id="mySidenav" className="sidenav">
-  <a href="#home" className="closebtn" onClick={() => closeNav()}>&times;</a>
+        <div id="mySidenav" className="sidenav">
+          <a href="#home" className="closebtn" onClick={() => closeNav()}>&times;</a>
 
-  <a   href="#home" onClick={() => setPageSelected("home")}>
-       Home
-    </a>
-    <a href="#signup"  onClick={() => setPageSelected("signup")} >
-        Signup
-    </a>
-    <a href="#login"  onClick={() => setPageSelected("login")} >
-      Log In
-    </a>
-
-    <a  href="#login"  onClick={() => setPageSelected("login")} >
-              Log Out
-
-    </a>
-
+            <a   href="#home" onClick={() => setPageSelected("home")}>
+              Home
+            </a>
+            {Auth.loggedIn() ? (
+            <>
+            <a  href="#login"  onClick={() => setPageSelected("login")} >
+                Log Out
+            </a>
+              </>
+              ) : (
+                <>
+            <a href="#signup"  onClick={() => setPageSelected("signup")} >
+                Signup
+            </a>
+            <a href="#login"  onClick={() => setPageSelected("home")} >
+              Log In
+            </a>
+            </>
+            )}
 </div>
 <span className="openNav" onClick={() => openNav()}>&#9776; Menu </span>
 </div>

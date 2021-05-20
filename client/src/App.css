@@ -9,9 +9,11 @@
 html{
   
 }
- header h1{
+
+header h1{
 padding:10;
 }
+
 header {
 background-color: var(--main);
 color:var(--third);
@@ -70,7 +72,7 @@ tr:nth-child(even) {
   text-decoration: underline;
 }
 
-.form {
+.form, Form.Group {
   margin-top: 25px;
   width: 100%;
   text-align: center;
