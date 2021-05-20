@@ -1,8 +1,22 @@
 import React from 'react';
-
+import Chart from "chart.js"
+import { populateTable,populateTotal,sendTransaction} from '../../logic' 
 function HomePage(){
+  
+  fetch("/api/transaction")
+  .then(response => {
+    return response.json();
+  })
+  .then(data => {
+    // save db data on global variable
+    transactions = data;
 
-
+    populateTotal();
+    populateTable();
+    // populateChart();
+  });
+  
+ 
     return (
         <div  id="home" class="wrapper">
         <div class="total">
@@ -12,8 +26,8 @@ function HomePage(){
         <div class="form">
           <input type="text" id="t-name" placeholder="Name of transaction" />
           <input type="number" min="0" id="t-amount" placeholder="Transaction amount" />
-          <button id="add-btn"><i class="fa fa-plus buttons"></i> Add Funds</button>
-          <button id="sub-btn"><i class="fa fa-minus"></i> Subtract Funds</button>
+          <button id="add-btn" onClick={() => sendTransaction(true)}><i class="fa fa-plus buttons" ></i> Add Funds</button>
+          <button id="sub-btn" onClick={() => sendTransaction(false)}><i class="fa fa-minus"></i> Subtract Funds</button>
           <p class="error"></p>
         </div>
     
@@ -29,7 +43,7 @@ function HomePage(){
           </table>
         </div>
         
-        <canvas id="myChart"></canvas>
+        {/* <canvas id="myChart"></canvas> */}
       </div>
     )
 }
