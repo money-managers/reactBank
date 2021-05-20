@@ -13,7 +13,7 @@ function HomePage(){
 
     populateTotal();
     populateTable();
-    // populateChart();
+    populateChart();
   });
   
  
