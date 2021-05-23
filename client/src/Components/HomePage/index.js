@@ -18,20 +18,20 @@ function HomePage(){
   
  
     return (
-        <div  id="home" class="wrapper">
-        <div class="total">
-          <div class="total">Your total is: $<span id="total">0</span></div>
+        <div  id="home" classNameName="wrapper">
+        <div className="total">
+          <div className="total">Your total is: $<span id="total">0</span></div>
         </div>
     
-        <div class="form">
+        <div className="form">
           <input type="text" id="t-name" placeholder="Name of transaction" />
           <input type="number" min="0" id="t-amount" placeholder="Transaction amount" />
-          <button id="add-btn" onClick={() => sendTransaction(true)}><i class="fa fa-plus buttons" ></i> Add Funds</button>
-          <button id="sub-btn" onClick={() => sendTransaction(false)}><i class="fa fa-minus"></i> Subtract Funds</button>
-          <p class="error"></p>
+          <button id="add-btn" onClick={() => sendTransaction(true)}><i className="fa fa-plus buttons" ></i> Add Funds</button>
+          <button id="sub-btn" onClick={() => sendTransaction(false)}><i className="fa fa-minus"></i> Subtract Funds</button>
+          <p className="error"></p>
         </div>
     
-        <div class="transactions">
+        <div className="transactions">
           <table>
             <thead>
               <th>Transaction</th>
