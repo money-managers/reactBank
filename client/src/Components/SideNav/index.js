@@ -24,7 +24,7 @@ function SideNav(props){
             </a>
             {Auth.loggedIn() ? (
             <>
-            <a  href="#login"  onClick={Auth.logout} >
+            <a  href="#login"  onClick={Auth.logout}>
                 Log Out
             </a>
               </>

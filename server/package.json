@@ -4,20 +4,17 @@
   "description": "samuels commit",
   "main": "index.js",
   "dependencies": {
-    "apollo-server-express": "^2.24.0",
-    "bcrypt": "^5.0.1",
-    "express": "^4.17.1",
-    "graphql": "^15.5.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.12.9",
-    "path": "^0.12.7",
-    "watch": "^1.0.2"
+    "if-env": "^1.0.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+  }, 
   "scripts": {
-    "seed": "node config/seeds.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "cd server && npm start",
+    "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "heroku-postbuild": "cd client && npm run build"
   },
   "repository": {
     "type": "git",
