@@ -2,32 +2,19 @@
   "name": "reactbank",
   "version": "1.0.0",
   "description": "samuels commit",
-  "proxy": "http://localhost:3001",
-  "main": "index.js",
+  "main": "server/server.js",
   "dependencies": {
-    "@react-icons/all-files": "^4.1.0",
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.6",
-    "@testing-library/user-event": "^12.8.3",
-    "apollo-server-express": "^2.24.0",
-    "express": "^4.17.1",
-    "if-env": "^1.0.4",
-    "path": "^0.12.7",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-icons": "^4.2.0",
-    "react-scripts": "^4.0.3",
-    "web-vitals": "^1.1.2"
+    "if-env": "^1.0.4"
   },
   "devDependencies": {
-    "concurrently": "^6.1.0"
-  },
+  }, 
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "cd server && npm start",
-    "start:dev": "concurrently \"cd server && npm start\" \"cd client && react-scripts start\"",
-    "seed": "cd server && npm run seed"
+    "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "heroku-postbuild": "cd client && npm run build"
   },
   "repository": {
     "type": "git",
@@ -38,17 +25,5 @@
   "bugs": {
     "url": "https://github.com/money-managers/reactBank/issues"
   },
-  "homepage": "https://github.com/money-managers/reactBank",
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "homepage": "https://github.com/money-managers/reactBank#readme"
 }
